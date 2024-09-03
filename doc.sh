@@ -8,6 +8,7 @@ RUSTDOCFLAGS="-Z unstable-options
     --document-hidden-items
     --show-type-layout
     --enable-index-page
+    --default-theme ayu
     --crate-version ${version}
     " \
     cargo +nightly doc --manifest-path "$sysroot/lib/rustlib/src/rust/library/Cargo.toml" --target-dir target
