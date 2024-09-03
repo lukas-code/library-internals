@@ -33,6 +33,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install rustup
         run: |
+          rustup self uninstall -y || true
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s - -y --default-toolchain none
       - name: Setup Pages
         uses: actions/configure-pages@v5
