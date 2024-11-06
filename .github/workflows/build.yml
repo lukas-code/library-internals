@@ -44,6 +44,9 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./target/doc
+      - name: Check for freshness
+        run: |
+          ./check-freshness.sh
 
   # Deployment job
   deploy:
