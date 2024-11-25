@@ -8,10 +8,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Automatically runs this workflow every day at 01:15 UTC.
-  # The nightly artifacts are published around 01:00 UTC.
-  schedule:
-    - cron: 15 1 * * *
+  # Automatically runs this workflow every day at 04:30 UTC.
+   schedule:
+    - cron: 30 4 * * *
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -40,13 +39,13 @@ jobs:
       - name: Build the docs
         run: |
           ./doc.sh
+      - name: Check for freshness
+        run: |
+          ./check-freshness.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./target/doc
-      - name: Check for freshness
-        run: |
-          ./check-freshness.sh
 
   # Deployment job
   deploy:
