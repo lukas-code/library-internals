@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
   # Automatically runs this workflow every day at 04:30 UTC.
-   schedule:
-    - cron: 30 4 * * *
+  schedule:
+  - cron: 30 4 * * *
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
